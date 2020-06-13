@@ -1,7 +1,7 @@
-package com.example.demo.JPAbackendZone.controller;
+package com.example.demo.JPAbackendZone.resource;
 
-import com.example.demo.JPAbackendZone.DAO.Book;
-import com.example.demo.JPAbackendZone.DAO.BookCategory;
+import com.example.demo.JPAbackendZone.dao.Book;
+import com.example.demo.JPAbackendZone.dao.BookCategory;
 import com.example.demo.JPAbackendZone.repository.BookCategoryRepository;
 import com.example.demo.JPAbackendZone.repository.BookRepository;
 import com.example.demo.JPAbackendZone.request.BookRequest;

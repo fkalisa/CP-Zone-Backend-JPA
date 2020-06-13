@@ -1,4 +1,4 @@
-package com.example.demo.JPAbackendZone.DAO;
+package com.example.demo.JPAbackendZone.dao;
 
 import javax.persistence.*;
 
@@ -14,6 +14,9 @@ public class Book {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private BookCategory bookCategory;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    private User user;
 
     public Book() {
     }

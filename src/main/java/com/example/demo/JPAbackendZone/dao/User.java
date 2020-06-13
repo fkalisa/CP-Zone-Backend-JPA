@@ -1,7 +1,9 @@
-package com.example.demo.JPAbackendZone.DAO;
+package com.example.demo.JPAbackendZone.dao;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -10,24 +12,16 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
-    private int age;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private Set<Book> rentedBooks;
+    private String email;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
 
-    public User(String firstName, String lastName, int age, Set<Book> rentedBooks) {
+    public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
-        this.rentedBooks = rentedBooks;
+        this.email = email;
     }
 
     public int getId() {
@@ -54,12 +48,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -68,7 +62,7 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", age=" + age +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.JPAbackendZone.DAO;
+package com.example.demo.JPAbackendZone.dao;
 
 import javax.persistence.*;
 import java.util.Set;

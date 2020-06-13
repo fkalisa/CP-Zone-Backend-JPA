@@ -1,6 +1,6 @@
 package com.example.demo.JPAbackendZone.repository;
 
-import com.example.demo.JPAbackendZone.DAO.Book;
+import com.example.demo.JPAbackendZone.dao.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

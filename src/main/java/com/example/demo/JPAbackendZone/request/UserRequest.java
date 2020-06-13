@@ -1,10 +1,16 @@
 package com.example.demo.JPAbackendZone.request;
 
-public class UserRequest {
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
+public class UserRequest {
+    @NotEmpty(message = "firstName should not be empty")
     private String firstName;
+    @NotEmpty(message = "lastName should not be empty")
     private String lastName;
-    private int age;
+    @NotEmpty(message = "email should not be empty")
+    @Email(message = "email is not valid")
+    private String email;
 
     public String getFirstName() {
         return firstName;
@@ -22,11 +28,12 @@ public class UserRequest {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
 }
