@@ -17,6 +17,18 @@ public class IssuedBooks {
 
     private int status;
 
+    private int counter;
+
+    public IssuedBooks() {
+    }
+
+    public IssuedBooks(int user_id, int book_id, int status, int counter) {
+        this.user_id = user_id;
+        this.book_id = book_id;
+        this.status = status;
+        this.counter = counter;
+    }
+
     public int getId() {
         return id;
     }
@@ -47,5 +59,14 @@ public class IssuedBooks {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

@@ -5,7 +5,7 @@ public class BookRequest {
     private String name;
     private String authorName;
     private int cost;
-    private int BookCategoryId;
+    private int bookCategoryId;
 
     public String getName() {
         return name;
@@ -32,10 +32,10 @@ public class BookRequest {
     }
 
     public int getBookCategoryId() {
-        return BookCategoryId;
+        return bookCategoryId;
     }
 
     public void setBookCategoryId(int bookCategoryId) {
-        BookCategoryId = bookCategoryId;
+        this.bookCategoryId = bookCategoryId;
     }
 }

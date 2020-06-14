@@ -14,17 +14,8 @@ public class Book {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private BookCategory bookCategory;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn
-    private User user;
 
     public Book() {
-    }
-
-    public Book(String name, String authorName, int cost) {
-        this.name = name;
-        this.authorName = authorName;
-        this.cost = cost;
     }
 
     public Book(String name, String authorName, int cost, int bookCategoryId) {

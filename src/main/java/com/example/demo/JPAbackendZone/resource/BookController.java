@@ -1,7 +1,6 @@
 package com.example.demo.JPAbackendZone.resource;
 
 import com.example.demo.JPAbackendZone.dao.Book;
-import com.example.demo.JPAbackendZone.dao.BookCategory;
 import com.example.demo.JPAbackendZone.repository.BookCategoryRepository;
 import com.example.demo.JPAbackendZone.repository.BookRepository;
 import com.example.demo.JPAbackendZone.request.BookRequest;
@@ -27,14 +26,7 @@ public class BookController {
 
     @PostMapping("/books")
     public void insertBook(@RequestBody BookRequest bookRequest) {
-        Optional<BookCategory> bookCategoryIdOptional = bookCategoryRepository.findById(bookRequest.getBookCategoryId());
-        Book book = null;
-        if (bookCategoryIdOptional.isPresent()) {
-            book = new Book(bookRequest.getName(), bookRequest.getAuthorName(), bookRequest.getCost(), bookCategoryIdOptional.get());
-        } else {
-            book = new Book(bookRequest.getName(), bookRequest.getAuthorName(), bookRequest.getCost(), bookRequest.getBookCategoryId());
-        }
-
+        Book book = new Book(bookRequest.getName(), bookRequest.getAuthorName(), bookRequest.getCost(), bookRequest.getBookCategoryId());
         bookRepository.save(book);
     }
 
@@ -63,10 +55,6 @@ public class BookController {
             book.setAuthorName(bookRequest.getAuthorName());
             book.setCost(bookRequest.getCost());
             bookRepository.save(book);
-
         }
-
     }
-
-
 }
